@@ -1,7 +1,10 @@
-form {
-  border: 1px solid blue;
+@import 'vendors/reset.scss';
+@import 'config/medias.scss';
+@import 'blocs/newParty.scss';
 
-  div {
-    border: 1px solid red;
-  }
+body {
+  padding: 1em;
+}
+h1{
+  color: green;
 }
