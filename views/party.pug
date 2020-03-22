@@ -1,6 +1,8 @@
 include ../partials/header.pug
-h1 Qui prend quoi ?
+script.
+  party = !{JSON.stringify(party)}
+img(class='logo' src='/logo.png')
 h2= party.name
 h3 Créé par #{party.author}
 label(for="url") Partagez l'événement
-input(id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}` data-share-title=`${party.name}` data-share-text=`${party.author} vous invite à rejoindre l'événément ${party.name}`)
+input( class='button' id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}` data-share-title=`${party.name}` data-share-text=`${party.author} vous invite à rejoindre l'événément ${party.name}`)
