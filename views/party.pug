@@ -23,7 +23,7 @@ div.content-event-thing
 div.content-event-value
   each el in liste
     form(method="post" action=`/party/${id}/items/${el._id}`).content-form-thing
-      div.content-thing
+      div
         p.title-thing Qui prend ?
         p= el.name
         p.title-user Quoi ?
