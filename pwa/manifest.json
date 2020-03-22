@@ -1,7 +1,10 @@
 {
-  "theme_color": "#051828",
-  "background_color": "#627686",
-  "display": "browser",
+  "name": "Qui prend prend quoi ? ",
+  "short_name": "QPQ ?",
+  "theme_color": "#86a8e7",
+  "background_color": "#373b44",
+  "display": "standalone",
+  "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",
   "icons": [

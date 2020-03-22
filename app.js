@@ -13,7 +13,45 @@ app.use(express.static('assets'));
 app.use(express.static('pwa'));
 
 
+app.get('/', function(req, res) {
 
+  res.render('index', { title: 'Qui prend quoi ?' });
+
+})
+
+app.get('/party', function(req, res) {
+
+  axios
+  .get(`${process.env.API_URL}/party/${req.params.id}`)
+  .then(({ data }) =>
+    res.render('party', {
+      party: data,
+      title: data.name,
+      url: `${process.env.FRONT_URL}:${process.env.PORT}/party/${data._id}`,
+      id: `${data._id}`,
+      elements: data.items
+    }),
+  )
+  .catch((err) => console.log(err));
+
+})
+
+app.get('/party/:id', function(req, res) {
+
+  axios
+  .get(`${process.env.API_URL}/party/${req.params.id}`)
+  .then(({ data }) =>
+    res.render('party', {
+      party: data,
+      title: data.name,
+      url: `${process.env.FRONT_URL}:${process.env.PORT}/party/${data._id}`,
+      id: `${data._id}`,
+      elements: data.items
+    }),
+  )
+  .catch((err) => console.log(err));
+
+})
 
 
 
