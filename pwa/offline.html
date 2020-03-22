@@ -8,21 +8,21 @@
     <script>
       caches.open('parties').then((cache) =>
             cache.keys().then((keys) =>
-            keys.forEach((key) => {
-              const name = localStorage.getItem(key.url);
-              if (name) {
-                  const $link = document.createElement('a');
-                  $link.href = key.url;
-                  $link.innerHTML = name;
-                  document.body.appendChild($link);
-            }
-            }
-            ))
-      );
+              keys.forEach((key) => {
+                const name = localStorage.getItem(key.url);
+                if (name) {
+                    const $link = document.createElement('a');
+                    $link.href = key.url;
+                    $link.innerHTML = name;
+                    document.body.appendChild($link);
+                }
+              } )
+            ));
     </script>
   </head>
   <body>
-    <h1>Oops !</h1>
-    <h2>S'il te plait </h2>
+    <h1>Oops ! 😅</h1>
+    <h2>Il semblerait que tu ne sois pas connecté.</h2>
+     <p> Soit tu te débrouilles soit tu appelles Cheik. Lui sera régler ton problème</p> 
   </body>
 </html>

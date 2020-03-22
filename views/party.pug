@@ -2,23 +2,30 @@ include ../partials/header.pug
 script.
   party = !{JSON.stringify(party)}
 img(class='logo' src='/logo.png')
-h2= party.name
-h3 Créé par #{party.author}
-form
-  label(for="url") Partagez l'événement
-  input( class='button' id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}` data-share-title=`${party.name}` data-share-text=`${party.author} vous invite à rejoindre l'événément ${party.name}`)
 
-form(method="post" action=`/party/${id}/items`)
-  label(for="user") Qui prend ?
-  input(name="user" id="user" placeholder="Jean")
-  label(for="name") Quoi ?
-  input(name="name" id="name" placeholder="Chips")
-  button(type="submit") Créer
-div
+div.content-event
+  h1 Votre événement
+  h2= party.name
+  h3 Créé par #{party.author}
+div.content-share
+  form.content-share-form
+    label(for="url") Partagez l'événement
+    input( class='button' id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}` data-share-title=`${party.name}` data-share-text=`${party.author} vous invite à rejoindre l'événément ${party.name}`)
+
+div.content-event-thing
+  form(method="post" action=`/party/${id}/items`).newParty
+    label(for="user") Qui prend ?
+    input(name="user" id="user" placeholder="Jean")
+    label(for="name") Quoi ?
+    input(name="name" id="name" placeholder="Chips")
+    button(type="submit") Créer
+
+div.content-event-value
   each el in liste
-    form(method="post" action=`/party/${id}/items/${el._id}`)
-      p.tasks__title Qui prend ?
-      p= el.name
-      p.tasks__title Quoi ?
-      p= el.user
-      button(type="submit") Supprimer
+    form(method="post" action=`/party/${id}/items/${el._id}`).content-form-thing
+      div.content-thing
+        p.title-thing Qui prend ?
+        p= el.name
+        p.title-user Quoi ?
+        p= el.user
+        button(type="submit") Supprimer

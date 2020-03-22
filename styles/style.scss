@@ -1,10 +1,14 @@
 @import 'vendors/reset.scss';
 @import 'config/medias.scss';
 @import 'blocs/newParty.scss';
+@import 'blocs/partyThing.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 body {
   padding: 1em;
   text-align: center;
 	background-color: #373B44;
 	font-family: Roboto;
+}
+.logo{
+  margin-bottom: 40px;
 }
