@@ -3,9 +3,9 @@ console.log('coucou')
 if (navigator.clipboard) {
   document.querySelectorAll('[data-clipboard]').forEach(($clipboardEl) => {
     const $button = document.createElement('button');
+    console.log($clipboardEl.parentNode)
     $button.innerHTML = 'Copier';
     $clipboardEl.parentNode.append($button);
-
     $button.addEventListener(
       'click',
       copyToClipboard.bind(this, $clipboardEl, $button),

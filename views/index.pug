@@ -1,13 +1,21 @@
 include ../partials/header.pug
 img(class='logo' src='logo.png' alt='logo')
-h2 Créer un événement
-form(method="post" action="/party").newParty
-  div.newParty__fields
-    label(for="name") Nom de l'événement
-    input(name="name" id="name" required minlength="3" placeholder="Nouvel an")
-    label(for="author" required) Votre pseudo
-    input(name="author" id="author" required minlength="3" placeholder="John")
-    label(for="date") Date de l'événement
-    input(name="date" id="date" type="date")
-  button(type="submit") Créer
-  
+h2 CRÉER UN ÉVENEMENT
+div.content
+  div.info
+    h3 INFORMATION
+    p Vous souhaitez préparer une soirée mais vous avez du mal avec organisation ? 
+    p Qui prend quoi est là pour vous. 
+    p Vous avez juste a créer votre événement puis à indiquer ce dont vous vous occupez. 
+    p Il vous reste qu'à le partage . 
+  div.form-event  
+    form(method="post" action="/party").newParty
+      div.newParty__fields
+        label(for="name") Nom de l'événement
+        input(name="name" id="name" required minlength="3" placeholder="Nouvel an")
+        label(for="author" required) Votre pseudo
+        input(name="author" id="author" required minlength="3" placeholder="John")
+        label(for="date") Date de l'événement
+        input(name="date" id="date" type="date")
+      button(type="submit") Créer
+      

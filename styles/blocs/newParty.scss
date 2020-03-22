@@ -1,5 +1,59 @@
+h1{
+  color: #86A8E7;
+  font-size: 20px;
+}
+h2{
+  color: white;
+  font-size: 20px;
+}
+h3{
+  color: white;
+  font-size: 30px;
+  margin: 30px;
+  font-weight: bold;
+}
+p{
+  text-align: left;
+  color: white;
+  font-size: 15px;
+  margin: 30px;
+}
+
+label{
+  color:#86A8E7;
+}
+button{
+  background-color: #86A8E7;
+  color:white;
+  padding: 10px 15px 10px 15px ;
+}
+
+.logo{
+  width:250px;
+}
+.newParty{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.content{
+  display: flex;
+  align-items: center;
+  margin: auto;
+  background-color: white;
+  width:80vw;
+}
+.info{
+  width: 50vw;
+  background-color: #86A8E7;
+}
+input{
+  margin: 10px;
+}
+
 .newParty__fields {
   margin-bottom: 1em;
+  
 
   @include medium {
     display: grid;

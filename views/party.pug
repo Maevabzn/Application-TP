@@ -4,5 +4,21 @@ script.
 img(class='logo' src='/logo.png')
 h2= party.name
 h3 Créé par #{party.author}
-label(for="url") Partagez l'événement
-input( class='button' id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}` data-share-title=`${party.name}` data-share-text=`${party.author} vous invite à rejoindre l'événément ${party.name}`)
+form
+  label(for="url") Partagez l'événement
+  input( class='button' id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}` data-share-title=`${party.name}` data-share-text=`${party.author} vous invite à rejoindre l'événément ${party.name}`)
+
+form(method="post" action=`/party/${id}/items`)
+  label(for="user") Qui prend ?
+  input(name="user" id="user" placeholder="Jean")
+  label(for="name") Quoi ?
+  input(name="name" id="name" placeholder="Chips")
+  button(type="submit") Créer
+div
+  each el in liste
+    form(method="post" action=`/party/${id}/items/${el._id}`)
+      p.tasks__title Qui prend ?
+      p= el.name
+      p.tasks__title Quoi ?
+      p= el.user
+      button(type="submit") Supprimer
